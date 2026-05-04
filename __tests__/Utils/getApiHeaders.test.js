@@ -1,6 +1,6 @@
 import {afterEach, describe, expect, test} from "@jest/globals";
 import {settings} from "../fixtures/settings.js";
-import {getApiHeaders} from "../../src/littled-utils.js";
+import {getApiHeaders} from "../../src/index.js";
 
 describe('getApiHeaders', () => {
 

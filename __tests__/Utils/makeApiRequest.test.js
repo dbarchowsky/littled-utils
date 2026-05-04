@@ -1,6 +1,6 @@
 import {describe, expect, test} from "@jest/globals";
 import {mockFetchJson} from "../fixtures/mockFetch.js";
-import {makeApiRequest} from "../../src/littled-utils.js";
+import {makeApiRequest} from "../../src/index.js";
 
 describe('makeApiRequest', () => {
     test('Should return JSON from API endpoint', async () => {

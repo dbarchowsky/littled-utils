@@ -1,5 +1,5 @@
 import {afterEach, beforeEach, describe, expect, jest, test} from "@jest/globals";
-import {setEventHandler} from "../../src/littled-utils.js";
+import {setEventHandler} from "../../src/index.js";
 
 describe('setEventHandler', () => {
 

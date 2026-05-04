@@ -1,6 +1,6 @@
 import {beforeEach, describe, expect, test} from "@jest/globals";
 import {settings} from "../fixtures/settings.js";
-import {createLittledUtils} from "../../src/littled-utils.js";
+import {showErrors} from "../../src/index.js";
 
 describe('showErrors', () => {
 
@@ -33,32 +33,27 @@ describe('showErrors', () => {
     test('using default container, an error message is displayed in the default container', () => {
         const msg = 'Test error message';
 
-        const utils = createLittledUtils(settings);
-        utils.showErrors(msg);
+        showErrors(msg);
 
         confirmDom(settings.selectors.errorContainerId, true, msg);
     });
     test('using default container, error message is not displayed in a container other than default', () => {
-        const utils = createLittledUtils(settings);
-        utils.showErrors('Test error message');
+        showErrors('Test error message');
         confirmDom(local_errors, false);
     });
     test('overriding the default container, error message is not displayed the default container', () => {
-        const utils = createLittledUtils(settings);
-        utils.showErrors('Test error message', `#${local_errors}`);
+        showErrors('Test error message', `#${local_errors}`);
         confirmDom(settings.selectors.errorContainerId, false);
     });
     test('overriding the default container, an error message is displayed in the specified container', () => {
         const msg = 'Test error message';
 
-        const utils = createLittledUtils(settings);
-        utils.showErrors(msg, `#${local_errors}`);
+        showErrors(msg, `#${local_errors}`);
 
         confirmDom(local_errors, true, msg);
     });
     test('overriding the default container, error message is not displayed in other error containers', () => {
-        const utils = createLittledUtils(settings);
-        utils.showErrors('Test error message', `#${local_errors}`);
+        showErrors('Test error message', `#${local_errors}`);
         confirmDom(other_errors, false);
     });
 });

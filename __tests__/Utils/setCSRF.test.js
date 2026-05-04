@@ -1,7 +1,7 @@
 import {afterEach, describe, expect, test} from "@jest/globals";
 import {settings} from "../fixtures/settings.js";
 import {mockFetchHeaders} from "../fixtures/mockFetch.js";
-import {createLittledUtils} from "../../src/littled-utils.js";
+import {csrfUtils} from "../../src/index.js";
 
 describe('setCSRF', () => {
 
@@ -31,7 +31,7 @@ describe('setCSRF', () => {
         mockFetchHeaders(jsonResponse, responseHeaders);
 
         // execute the function
-        const utils = createLittledUtils(settings);
+        const utils = csrfUtils(settings);
         utils.setCSRF();
 
         // confirm the csrf token is present in the meta tag

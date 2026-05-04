@@ -1,5 +1,5 @@
 import {describe, expect, test} from "@jest/globals";
-import {createLittledUtils} from "../../src/littled-utils";
+import {cookieUtils} from "../../src/index.js";
 import {mockFetchJson} from "../fixtures/mockFetch.js";
 import {settings} from "../fixtures/settings.js";
 
@@ -14,13 +14,13 @@ describe('SiteUtils.checkForCookieConsent', () => {
     ${"success"}     | ${false}
     `('Should return $expected when with status of "$status"',async ({status, expected}) => {
         mockFetchJson({status: status});
-        const utils = createLittledUtils(settings);
+        const utils = cookieUtils(settings);
         await expect(utils.checkForCookieConsent()).resolves.toBe(expected);
     });
 
     test('Should throw error on HTTP error', async () => {
        mockFetchJson({error: "Some error"}, false, 500);
-       const utils = createLittledUtils(settings);
+       const utils = cookieUtils(settings);
        await expect(utils.checkForCookieConsent())
            .rejects.toThrow('HTTP 500 error: "Some error"');
     });

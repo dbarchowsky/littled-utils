@@ -1,6 +1,6 @@
 import {afterEach, describe, expect, test} from '@jest/globals';
 import {settings} from '../fixtures/settings.js';
-import {createLittledUtils} from '../../src/littled-utils.js';
+import {csrfUtils} from '../../src/index.js';
 
 describe('getCSRFHeaders', () => {
 
@@ -19,7 +19,7 @@ describe('getCSRFHeaders', () => {
         meta.content = csrfToken;
         document.head.appendChild(meta);
 
-        const utils = createLittledUtils(settings);
+        const utils = csrfUtils(settings);
         const headers = utils.getCSRFHeaders();
 
         expect(headers).toBeInstanceOf(Headers);
@@ -28,7 +28,7 @@ describe('getCSRFHeaders', () => {
 
     test('returns empty Headers if CSRF token is not found', () => {
 
-        const utils = createLittledUtils(settings);
+        const utils = csrfUtils(settings);
         const headers = utils.getCSRFHeaders();
 
         expect(headers).toBeInstanceOf(Headers);
