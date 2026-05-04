@@ -1,0 +1,35 @@
+{
+    "type": "module",
+    "name": "littled-utils",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    },
+    "jest": {
+        "testEnvironment": "jsdom",
+        "setupFilesAfterEnv": [
+            "./__tests__/fixtures/jest.setup.js"
+        ],
+        "testMatch": [
+            "**/__tests__/**/*.test.js"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dbarchowsky/littled-utils.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/dbarchowsky/littled-utils/issues"
+    },
+    "homepage": "https://github.com/dbarchowsky/littled-utils#readme",
+    "devDependencies": {
+        "@testing-library/jest-dom": "^6.9.1",
+        "jest": "^30.3.0",
+        "jest-environment-jsdom": "^30.3.0"
+    }
+}
