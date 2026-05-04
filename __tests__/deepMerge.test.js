@@ -7,7 +7,8 @@ describe('deepMerge', () => {
     test.each(deepMergeTestData())('$label', (
         data
     ) => {
-        deepMerge(data.target, ...data.sources);
+        const result = deepMerge(data.target, ...data.sources);
+        expect(result).toEqual(data.expected);
         expect(data.target).toEqual(data.expected);
     });
 });
