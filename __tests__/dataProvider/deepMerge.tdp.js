@@ -90,5 +90,22 @@ export const deepMergeTestData = () => [
             }
         }
     },
-
+    {
+        label: 'Merge with target',
+        target: {
+            foo: 'bar',
+            biz: 'bash'
+        },
+        sources: [
+            {
+                biz: 'baloney',
+                barn: 'bark'
+            }
+        ],
+        expected: {
+            foo: 'bar',
+            biz: 'baloney',
+            barn: 'bark'
+        }
+    }
 ];
