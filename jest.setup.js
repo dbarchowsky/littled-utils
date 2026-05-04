@@ -1,0 +1,1 @@
+import 'fetchwg-fetch';

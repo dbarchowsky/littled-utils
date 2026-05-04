@@ -24,7 +24,7 @@ export function hideErrors (selector = config.selectors.errorContainer) {
 export function showErrors (message, selector = `#${config.selectors.errorContainerId}`) {
     const e = document.querySelector (selector);
     if (e) {
-        e.innerHTML = message;
+        e.textContent = message;
         e.classList.remove (config.css.hidden);
     }
 }

@@ -21,12 +21,18 @@ export function mockFetchJson(data, ok = true, status = 200) {
  * @param {{}} responseHeaders
  * @param {boolean} ok
  * @param {number} status
+ * @param {string} statusText
  */
-export function mockFetchHeaders(data, responseHeaders, ok = true, status = 200) {
+export function mockFetchHeaders(
+    data,
+    responseHeaders,
+    ok = true,
+    status = 200,
+    statusText = 'Error') {
     global.fetch = jest.fn().mockResolvedValue({
         ok,
         status,
-        statusText: ok ? 'OK' : 'Error',
+        statusText: ok ? 'OK' : statusText,
         headers: new Headers(responseHeaders),
         json: async () => data
     });
