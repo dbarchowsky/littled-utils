@@ -6,4 +6,5 @@ export * from "./errors.js";
 export * from "./events.js";
 export * from "./mail.js";
 export * from "./navigation.js";
+export * from "./objects.js";
 export * from "./string.js";
