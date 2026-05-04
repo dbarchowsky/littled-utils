@@ -1,6 +1,6 @@
 import {afterEach, beforeEach, describe, expect, test} from "@jest/globals";
-import {settings} from "../fixtures/settings.js";
-import {hideErrors} from "../../src/index.js";
+import {settings} from "./fixtures/settings.js";
+import {hideErrors} from "../src/index.js";
 
 describe('hideErrors', () => {
 

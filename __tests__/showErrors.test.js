@@ -1,6 +1,6 @@
 import {beforeEach, describe, expect, test} from "@jest/globals";
-import {settings} from "../fixtures/settings.js";
-import {showErrors} from "../../src/index.js";
+import {settings} from "./fixtures/settings.js";
+import {showErrors} from "../src/index.js";
 
 describe('showErrors', () => {
 

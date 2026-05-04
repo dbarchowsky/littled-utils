@@ -1,5 +1,5 @@
 import {describe, expect, test} from '@jest/globals';
-import {ucFirst} from "../../src/index.js";
+import {ucFirst} from "../src/index.js";
 
 describe('SiteUtils.ucFirst()', () => {
     test.each`

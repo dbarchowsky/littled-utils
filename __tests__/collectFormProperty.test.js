@@ -1,5 +1,5 @@
 import {beforeEach, afterEach, describe, expect, test} from "@jest/globals";
-import {collectFormProperty} from "../../src/index.js";
+import {collectFormProperty} from "../src/index.js";
 
 describe('SiteUtils.collectFormProperty()', () => {
 

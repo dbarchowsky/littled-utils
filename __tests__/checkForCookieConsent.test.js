@@ -1,7 +1,7 @@
 import {describe, expect, test} from "@jest/globals";
-import {cookieUtils} from "../../src/index.js";
-import {mockFetchJson} from "../fixtures/mockFetch.js";
-import {settings} from "../fixtures/settings.js";
+import {cookieUtils} from "../src/index.js";
+import {mockFetchJson} from "./fixtures/mockFetch.js";
+import {settings} from "./fixtures/settings.js";
 
 describe('SiteUtils.checkForCookieConsent', () => {
     test.each`
