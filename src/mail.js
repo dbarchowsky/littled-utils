@@ -13,4 +13,9 @@ export function mailIt (u, d, tld, s= '') {
     mailIt._navigate(href);
 }
 
+/**
+ * Helper function to allow for simpler unit testing.
+ * @param {string} href
+ * @private
+ */
 mailIt._navigate = (href) => window.location.replace(href);
