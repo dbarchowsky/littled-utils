@@ -1,6 +1,6 @@
 import {describe, expect, test} from "@jest/globals";
 import {deepMerge} from "../src/index.js";
-import {deepMergeTestData} from "./dataProvider/deepMerge.tdp.js";
+import {deepMergeTestData} from "./dataProvider/objects.deepMerge.tdp.js";
 
 describe('deepMerge', () => {
 
