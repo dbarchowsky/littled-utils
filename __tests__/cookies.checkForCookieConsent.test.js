@@ -1,9 +1,14 @@
-import {describe, expect, test} from "@jest/globals";
+import {afterEach, describe, expect, jest, test} from "@jest/globals";
 import {cookieUtils} from "../src/index.js";
 import {mockFetchJson} from "./fixtures/mockFetch.js";
 import {settings} from "./fixtures/settings.js";
 
 describe('SiteUtils.checkForCookieConsent', () => {
+
+    afterEach(() => {
+        jest.clearAllMocks();
+    });
+
     test.each`
     status                      | expected
     ${"accepted"}    | ${true}

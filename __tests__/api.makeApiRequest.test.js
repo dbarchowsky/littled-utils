@@ -1,8 +1,13 @@
-import {describe, expect, test} from "@jest/globals";
+import {afterEach, describe, expect, jest, test} from "@jest/globals";
 import {mockFetchJson} from "./fixtures/mockFetch.js";
 import {makeApiRequest} from "../src/index.js";
 
 describe('makeApiRequest', () => {
+
+    afterEach(() => {
+        jest.clearAllMocks();
+    });
+
     test('Should return JSON from API endpoint', async () => {
         const mockResponse = {
             status: 'success',
