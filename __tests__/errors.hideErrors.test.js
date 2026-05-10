@@ -1,6 +1,6 @@
 import {afterEach, beforeEach, describe, expect, test} from "@jest/globals";
 import {settings} from "./fixtures/settings.js";
-import {hideErrors} from "../src/index.js";
+import {dismissErrors} from "../src/index.js";
 
 describe('hideErrors', () => {
 
@@ -33,22 +33,22 @@ describe('hideErrors', () => {
     });
 
     test('using default container, all error elements are hidden', () => {
-        hideErrors();
+        dismissErrors();
         confirmDom(settings.selectors.errorContainerId, false);
         confirmDom(other_errors, false);
         confirmDom(local_errors, false);
     });
     test('overriding the default container, error message is not displayed the default container', () => {
-        hideErrors(`#${local_errors}`);
+        dismissErrors(`#${local_errors}`);
         confirmDom(settings.selectors.errorContainerId, true);
     });
     test('overriding the default container, an error message is displayed in the specified container', () => {
-        hideErrors(`#${local_errors}`);
+        dismissErrors(`#${local_errors}`);
 
         confirmDom(local_errors, false);
     });
     test('overriding the default container, error message is not displayed in other error containers', () => {
-        hideErrors(`#${local_errors}`);
+        dismissErrors(`#${local_errors}`);
         confirmDom(other_errors, true);
     });
 });

@@ -12,7 +12,7 @@ const config = {
  * Hide the error container.
  * @param {string} selector
  */
-export function hideErrors (selector = config.selectors.errorContainer) {
+export function dismissErrors (selector = config.selectors.errorContainer) {
     document.querySelectorAll (selector).forEach (e => e.classList.add (config.css.hidden))
 }
 
