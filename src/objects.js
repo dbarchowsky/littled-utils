@@ -20,3 +20,27 @@ export function deepMerge(target, ...sources) {
     }
     return deepMerge(target, ...sources);
 }
+
+/**
+ * Look up a value in an associative array, e.g. form data to be sent along with a request
+ * @param needle {int|string|int[]|string[]}
+ * @param haystack {array}
+ * @returns {*|undefined}
+ */
+export function lookupValue(needle, haystack) {
+    if (Array.isArray(needle)) {
+        for (const key of needle) {
+            if (key in haystack) {
+                return haystack[key];
+            }
+        }
+    }
+    else {
+        if (haystack.hasOwnProperty(needle)) {
+            return haystack[needle];
+        }
+    }
+    return undefined;
+}
+
+
