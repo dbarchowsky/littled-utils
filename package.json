@@ -17,6 +17,9 @@
         ],
         "testMatch": [
             "**/__tests__/**/*.test.js"
+        ],
+        "coveragePathIgnorePatterns": [
+            "/__tests__/fixtures"
         ]
     },
     "repository": {
