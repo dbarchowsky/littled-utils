@@ -1,6 +1,6 @@
 import {describe, expect, test} from "@jest/globals";
 import {formatCookieExpiration} from "../src/index.js";
-import {formatCookieExpirationTestData as testData} from "./dataProvider/cookies.formatCookieExpiration.tdp.js";
+import {formatCookieExpirationTestData as testData} from "./fixtures/dataProvider/cookies.formatCookieExpiration.tdp.js";
 
 describe('formatCookieExpiration', () => {
     test.each(testData())('$label', (
