@@ -7,4 +7,5 @@ export * from "./events.js";
 export * from "./mail.js";
 export * from "./navigation.js";
 export * from "./objects.js";
+export * from "./requests.js";
 export * from "./string.js";
