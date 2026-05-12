@@ -21,7 +21,7 @@ export function dismissErrors (selector = config.selectors.errorContainer) {
  * @param {String} message
  * @param {Object} target
  * @param {String|undefined} target.selector
- * @param {HTMLElement|undefined} target.parent
+ * @param {Element|undefined} target.parent
  * @return {void}
  */
 export function displayErrors (message, target = {}) {
