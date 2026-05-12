@@ -21,7 +21,7 @@ export function dismissErrors (selector = config.selectors.errorContainer) {
  * @param {string} message
  * @param {string} selector
  */
-export function showErrors (message, selector = `#${config.selectors.errorContainerId}`) {
+export function displayErrors (message, selector = `#${config.selectors.errorContainerId}`) {
     const e = document.querySelector (selector);
     if (e) {
         e.textContent = message;
