@@ -18,11 +18,18 @@ export function dismissErrors (selector = config.selectors.errorContainer) {
 
 /**
  * Display an error message in the element dedicated to error messages.
- * @param {string} message
- * @param {string} selector
+ * @param {String} message
+ * @param {Object} target
+ * @param {String|undefined} target.selector
+ * @param {HTMLElement|undefined} target.parent
+ * @return {void}
  */
-export function displayErrors (message, selector = `#${config.selectors.errorContainerId}`) {
-    const e = document.querySelector (selector);
+export function displayErrors (message, target = {}) {
+    target = {
+        selector: target.selector ?? config.selectors.errorContainer,
+        parent: target.parent ?? document.body
+    };
+    const e = target.parent.querySelector (target.selector);
     if (e) {
         e.textContent = message;
         e.classList.remove (config.css.hidden);
