@@ -11,6 +11,7 @@ describe('getCSRFTokenValue', () => {
     const responseData = {status: 'success', csrf_token: apiToken};
 
     afterEach(() => {
+        document.head.innerHTML = '';
         const meta = document.querySelector(`meta[name="${settings.selectors.csrfTokenId}"]`);
         if (meta) {
             document.head.removeChild(meta);
@@ -18,7 +19,7 @@ describe('getCSRFTokenValue', () => {
     });
 
     it("Should retrieve the CSRF token from the document if available", async () => {
-        addMetaTag(settings.selectors.csrfTokenId, docToken);
+        document.head.innerHTML = `<meta name="${settings.selectors.csrfTokenId}" content="${docToken}">`;
 
         mockFetchHeaders(responseData, {'X-CSRF-Token': apiToken}, true, 200);
 

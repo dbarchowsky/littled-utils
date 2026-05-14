@@ -1,16 +1,20 @@
+export const csrfOptions = {
+    selectors: {
+        csrfTokenId: 'csrf-token',
+        errorContainer: '.alert-error',
+        errorContainerId: 'error_container',
+    },
+    routes: {
+        api: {
+            csrfToken: '/api/csrf-token',
+        }
+    },
+};
+
 export function csrfUtils (settings = {}) {
 
     const config = {
-        selectors: {
-            csrfTokenId: 'csrf_token',
-            errorContainer: '.alert-error',
-            errorContainerId: 'error_container',
-        },
-        routes: {
-            api: {
-                csrfToken: '/api/csrf-token',
-            }
-        },
+        ...csrfOptions,
         ...settings,
     };
 
