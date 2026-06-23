@@ -4,8 +4,8 @@ export function cookieUtils (settings = {}) {
         routes: {
             api: {
                 csrfToken: '/api/csrf_token',
-                consentStatus: '/api/consent/status',
-                consentAccept: '/api/consent/accept',
+                consentStatus: '/api/cookie-consent/status',
+                consentAccept: '/api/cookie-consent/accept',
             }
         },
         ...settings,
