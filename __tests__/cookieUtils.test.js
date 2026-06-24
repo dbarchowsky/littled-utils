@@ -8,19 +8,19 @@ describe('cookieUtils', () => {
     ) => {
         const baseUtils = cookieUtils();
         const expected = {
-            ...baseUtils.config,
+            ...baseUtils.cuConfig,
             ...(data?.runtimeOptions || {}),
             routes: {
-                ...(baseUtils.config.routes || {}),
+                ...(baseUtils.cuConfig.routes || {}),
                 ...(data.runtimeOptions?.routes || {}),
                 api: {
-                    ...(baseUtils.config.routes?.api || {}),
+                    ...(baseUtils.cuConfig.routes?.api || {}),
                     ...(data.runtimeOptions?.routes?.api || {}),
                 },
             },
         };
 
         const utils = cookieUtils(data.runtimeOptions || {});
-        expect(utils.config).toEqual(expected);
+        expect(utils.cuConfig).toEqual(expected);
     });
 });

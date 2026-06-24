@@ -1,6 +1,6 @@
 export function cookieUtils (settings = {}) {
 
-    const config = {
+    const cuConfig = {
         ...settings,
         routes: {
             ...(settings?.routes || {}),
@@ -18,7 +18,7 @@ export function cookieUtils (settings = {}) {
      * @returns {Promise<boolean>} True if status is 'approved', false otherwise.
      */
     async function checkForCookieConsent () {
-        const response = await fetch (config.routes.api.consentStatus);
+        const response = await fetch (cuConfig.routes.api.consentStatus);
 
         if (!response.ok) {
             const json = await response.json ();
@@ -30,7 +30,7 @@ export function cookieUtils (settings = {}) {
     }
 
     return {
-        config, checkForCookieConsent
+        cuConfig, checkForCookieConsent
     };
 }
 

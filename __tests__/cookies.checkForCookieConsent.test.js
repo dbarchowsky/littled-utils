@@ -42,7 +42,7 @@ describe('SiteUtils.checkForCookieConsent', () => {
         };
         const utils = cookieUtils(runtimeOptions);
 
-        expect(utils.config.routes.api.consentStatus).toBe(runtimeRoute);
+        expect(utils.cuConfig.routes.api.consentStatus).toBe(runtimeRoute);
 
         await utils.checkForCookieConsent();
         expect(global.fetch).toHaveBeenCalledWith(runtimeRoute);
