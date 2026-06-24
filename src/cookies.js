@@ -1,14 +1,16 @@
 export function cookieUtils (settings = {}) {
 
     const config = {
+        ...settings,
         routes: {
+            ...(settings?.routes || {}),
             api: {
+                ...(settings.routes?.api || {}),
                 csrfToken: '/api/csrf_token',
                 consentStatus: '/api/cookie-consent/status',
                 consentAccept: '/api/cookie-consent/accept',
             }
         },
-        ...settings,
     };
 
     /**
@@ -28,7 +30,7 @@ export function cookieUtils (settings = {}) {
     }
 
     return {
-        checkForCookieConsent
+        config, checkForCookieConsent
     };
 }
 
