@@ -5,10 +5,10 @@ export function cookieUtils (settings = {}) {
         routes: {
             ...(settings?.routes || {}),
             api: {
-                ...(settings.routes?.api || {}),
                 csrfToken: '/api/csrf_token',
                 consentStatus: '/api/cookie-consent/status',
                 consentAccept: '/api/cookie-consent/accept',
+                ...(settings.routes?.api || {}),
             }
         },
     };
