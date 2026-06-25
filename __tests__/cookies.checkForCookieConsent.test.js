@@ -11,10 +11,11 @@ describe('SiteUtils.checkForCookieConsent', () => {
 
     test.each`
     status                      | expected
-    ${"accepted"}    | ${true}
+    ${"granted"}    | ${true}
     ${"declined"}    | ${false}
     ${"unknown"}     | ${false}
     ${"unavailable"} | ${false}
+    ${"accepted"}    | ${false}
     ${"approved"}    | ${false}
     ${"success"}     | ${false}
     `('Should return $expected when with status of "$status"',async ({status, expected}) => {

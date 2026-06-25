@@ -9,7 +9,12 @@ export function cookieUtils (settings = {}) {
                 consentStatus: '/api/cookie-consent/status',
                 consentAccept: '/api/cookie-consent/accept',
                 ...(settings.routes?.api || {}),
-            }
+            },
+        },
+        status: {
+            ...(settings?.status || {}),
+            granted: 'granted',
+            declined: 'declined',
         },
     };
 
@@ -26,7 +31,7 @@ export function cookieUtils (settings = {}) {
         }
 
         const json = await response.json ();
-        return json.status === 'accepted';
+        return json.status === cuConfig.status.granted;
     }
 
     return {
